@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 
 import * as Sentry from "@sentry/nextjs";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export function generateMetadata(): Metadata {
   return {
-      title: "Janak's Portfolio",
-      description: "A showcase of my work as a Full-Stack GenAI Developer",
+    title: "Janak's Portfolio",
+    description: "A showcase of my work as a Full-Stack GenAI Developer",
     other: {
       ...Sentry.getTraceData(),
     },
@@ -38,6 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
