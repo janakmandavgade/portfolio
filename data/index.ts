@@ -3,7 +3,7 @@ import { link } from "fs";
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  // { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -230,9 +230,9 @@ export const socialMedia = [
     img: "/linkedin.png",
     link: "https://www.linkedin.com/in/janakmandavgade/",
   },
-  // {
-  //   id: 3,
-  //   img: "/link.svg",
-  //   link: "",
-  // },
+  {
+    id: 3,
+    img: "/cv.svg",
+    link: "https://drive.google.com/file/d/1LlNmUyOC9Vy1zuUkx0m22oT5B9PMfQBW/view?usp=sharing",
+  },
 ];

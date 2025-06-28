@@ -4,12 +4,24 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
+import * as Sentry from "@sentry/nextjs";
+
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Janak's Portfolio",
-  description: "A showcase of my work as a Full-Stack GenAI Developer",
-};
+// export const metadata: Metadata = {
+//   title: "Janak's Portfolio",
+//   description: "A showcase of my work as a Full-Stack GenAI Developer",
+// };
+
+export function generateMetadata(): Metadata {
+  return {
+      title: "Janak's Portfolio",
+      description: "A showcase of my work as a Full-Stack GenAI Developer",
+    other: {
+      ...Sentry.getTraceData(),
+    },
+  };
+}
 
 export default function RootLayout({
   children,
